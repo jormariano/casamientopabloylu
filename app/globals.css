@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Al poner --color-*, Tailwind v4 crea automáticamente las clases de texto, fondo, etc. */
+  --color-olive-dark: var(--olive-dark);
+  --color-olive: var(--olive);
+  --color-olive-light: var(--olive-light);
+
+  --color-cream: var(--cream);
+  --color-cream-2: var(--cream-2);
+
+  --color-rust: var(--rust);
+  --color-rust-dark: var(--rust-dark);
+
+  --color-navy: var(--navy);
+  --color-ink: var(--ink);
+  --color-line: var(--line);
+}
+
+:root {
+  /* Tus variables originales nativas de CSS */
+  --olive-dark: #454f2e;
+  --olive: #5c6a3d;
+  --olive-light: #71804f;
+  --cream: #f6f1e2;
+  --cream-2: #efe8d4;
+  --rust: #a8442c;
+  --rust-dark: #7c3020;
+  --navy: #31456b;
+  --ink: #2c2e1f;
+  --line: rgba(255, 255, 255, 0.28);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream); /* Puedes usar variables nativas */
+}
