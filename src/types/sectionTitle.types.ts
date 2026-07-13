@@ -1,4 +1,5 @@
-interface SectionTitleProps {
-  children: React.ReactNode;
+import { ReactNode } from 'react';
+export interface SectionTitleProps {
+  children: ReactNode;
   className?: string;
 }

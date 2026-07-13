@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { InfoCardProps } from '@/src/types/infoCard.types';
 
 const InfoCard = ({ icon, title, children, className }: InfoCardProps) => {
   const Icon = icon;
