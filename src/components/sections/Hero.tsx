@@ -11,7 +11,7 @@ const Hero = () => {
           NOS CASAMOS
         </h1>
         <SectionTitle className="text-cream">Lucas y Pablo</SectionTitle>
-
+{/* 
         <Image
           src="/ilustracion.jpeg"
           width={300}
@@ -26,6 +26,8 @@ const Hero = () => {
               'radial-gradient(ellipse at center, black 55%, transparent 90%)',
           }}
         />
+        */}
+        
       </Section>
     </Container>
   );

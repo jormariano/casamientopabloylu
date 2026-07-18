@@ -2,6 +2,7 @@ import Hero from '@/src/components/sections/Hero';
 import EventDetails from '@/src/components/sections/EventDetails';
 import RSVP from '../components/sections/RSVP';
 import ContainerDiveder from '../components/ui/ContainerDiveder';
+import Footer from '../components/sections/Footer';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ContainerDiveder />
       <RSVP />
       <ContainerDiveder />
+      <Footer />
     </main>
   );
 }

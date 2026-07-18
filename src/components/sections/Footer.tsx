@@ -1,7 +1,5 @@
-import React from 'react';
-
 const Footer = () => {
-  return <div>Footer</div>;
+  return <div className="p-2">© 2026 - Casamiento Lucas y Pablo ♡</div>;
 };
 
 export default Footer;
