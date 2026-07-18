@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 const Input = ({ label, className, ...props }: InputProps) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 mb-2.5">
       <label
         htmlFor={props.name}
         className={clsx('text-sm', 'font-medium', 'text-ink', className)}

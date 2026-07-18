@@ -10,12 +10,19 @@ import {
   attendanceOptions,
   invitationOptions,
 } from '@/src/constants/rsvp.constants';
+import Button from '../ui/Button';
+import LineBorder from '../ui/LineBorder';
 import { useState } from 'react';
 import clsx from 'clsx';
 
 const RSVP = () => {
   const [invitationConfirmation, setInvitationConfirmation] = useState('');
   const [invitationType, setInvitationType] = useState('');
+  const [members, setMembers] = useState([1, 2]);
+
+  const handleAddMember = () => {
+    setMembers((prev) => [...prev, prev.length + 1]);
+  };
 
   const classText = 'text-1xl text-ink';
 
@@ -26,22 +33,22 @@ const RSVP = () => {
         <h3 className="text-1xl text-cream text-center">
           (antes del 15 de octubre de 2026)
         </h3>
-        <form className="bg-cream rounded-xl p-6 flex flex-col gap-6 shadow-lg">
+        <form className="bg-cream rounded-xl p-6 flex flex-col shadow-lg">
           <RadioButton
             label="¿Vas a asistir?"
             name="attendance"
             options={attendanceOptions}
             onValueChange={setInvitationConfirmation}
             className="text-1xl text-ink text-center"
+            layout="grid"
+            variant="button"
             required
           />
 
           <div
             className={clsx(
-              'overflow-hidden transition-all duration-500',
-              invitationConfirmation === 'si'
-                ? 'max-h-250 opacity-100 mt-6'
-                : 'max-h-0 opacity-0',
+              'transition-opacity duration-500',
+              invitationType ? 'opacity-100' : 'opacity-0 hidden',
             )}
           >
             {invitationConfirmation === 'no' && (
@@ -51,24 +58,23 @@ const RSVP = () => {
             )}
             {invitationConfirmation === 'si' && (
               <>
-                <div className="border-t border-olive/20 my-6" />
+                <LineBorder />
                 <p className="text-1xl text-ink text-center border-2 border-rust rounded-md p-1.5">
-                  Por favor, completa el form según tu invitación
+                  Tu invitación fue:
                 </p>
                 <RadioButton
-                  label="Tu invitación fue:"
                   name="invitationType"
-                  className="text-1xl text-ink text-center"
+                  className={classText}
                   options={invitationOptions}
                   onValueChange={setInvitationType}
+                  layout="flex"
+                  variant="button"
                 />
-                <div className="border-t border-olive/20 my-6" />
+                <LineBorder />
                 <div
                   className={clsx(
-                    'overflow-hidden transition-all duration-500',
-                    invitationType === 'individual'
-                      ? 'max-h-250 opacity-100 mt-6'
-                      : 'max-h-0 opacity-0',
+                    'transition-opacity duration-500',
+                    invitationType ? 'opacity-100' : 'opacity-0 hidden',
                   )}
                 >
                   {invitationType === 'individual' && (
@@ -88,51 +94,53 @@ const RSVP = () => {
                         name="foodRestriction"
                         options={foodRestrictions}
                         className={classText}
+                        layout="grid"
+                        variant="radio"
                       ></RadioButton>
                     </>
                   )}
                   {invitationType === 'familiar' && (
                     <>
-                      <Input
-                        label="Integrante 1"
-                        name="member1"
-                        placeholder="Nombre y apellido"
-                        className={classText}
-                      />
+                      {members.map((member) => (
+                        <div key={member}>
+                          <Input
+                            label={`Integrante ${member}`}
+                            name={`member${member}`}
+                            placeholder="Nombre y apellido"
+                            className={classText}
+                          />
 
-                      <RadioButton
-                        label="Restricción alimentaria"
-                        name="foodRestriction1"
-                        options={foodRestrictions}
-                        className={classText}
-                      />
+                          <RadioButton
+                            label="Restricción alimentaria"
+                            name={`foodRestriction${member}`}
+                            options={foodRestrictions}
+                            className={classText}
+                            layout="grid"
+                            variant="radio"
+                          />
 
-                      <Input
-                        label="Integrante 2"
-                        name="member2"
-                        placeholder="Nombre y apellido"
-                        className={classText}
-                      />
-
-                      <RadioButton
-                        label="Restricción alimentaria"
-                        name="foodRestriction2"
-                        options={foodRestrictions}
-                        className={classText}
-                      />
-                      <Input
-                        label="Integrante 3"
-                        name="member3"
-                        placeholder="Nombre y apellido"
-                        className={classText}
-                      />
-
-                      <RadioButton
-                        label="Restricción alimentaria"
-                        name="foodRestriction3"
-                        options={foodRestrictions}
-                        className={classText}
-                        layout="grid"
+                          <LineBorder />
+                        </div>
+                      ))}
+                      <Button
+                        label="Agregar invitado"
+                        onClick={handleAddMember}
+                        className={clsx(
+                          'w-3xs',
+                          'flex',
+                          'items-center',
+                          'justify-center',
+                          'rounded-sm',
+                          'border',
+                          'border-rust',
+                          'px-6',
+                          'py-3',
+                          'transition-all',
+                          'duration-200',
+                          'bg-rust',
+                          'text-1xl',
+                          'text-cream',
+                        )}
                       />
                     </>
                   )}

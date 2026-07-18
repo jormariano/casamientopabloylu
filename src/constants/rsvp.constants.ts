@@ -1,8 +1,8 @@
 export const foodRestrictions = [
   { value: 'none', label: 'Ninguna' },
+  { value: 'celiac', label: 'Celíaco' },
   { value: 'vegetarian', label: 'Vegetariano' },
   { value: 'vegan', label: 'Vegano' },
-  { value: 'celiac', label: 'Celíaco' },
 ];
 
 export const attendanceOptions = [
