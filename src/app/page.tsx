@@ -1,6 +1,7 @@
 import Hero from '@/src/components/sections/Hero';
 import EventDetails from '@/src/components/sections/EventDetails';
 import RSVP from '../components/sections/RSVP';
+import Map from '../components/sections/Map';
 import ContainerDivider from '../components/ui/ContainerDivider';
 import Footer from '../components/sections/Footer';
 
@@ -12,6 +13,8 @@ export default function Home() {
       <EventDetails />
       <ContainerDivider />
       <RSVP />
+      <ContainerDivider />
+      <Map />
       <ContainerDivider />
       <Footer />
     </main>
