@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { ContainerProps } from '@/src/types/container.types';
 
 const Section = ({ children, className }: ContainerProps) => {
   return (
