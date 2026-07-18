@@ -1,6 +1,4 @@
-import React from 'react';
-
-const ContainerDiveder = () => {
+const ContainerDivider = () => {
   return (
     <div
       className="w-full h-12 bg-cream
@@ -9,4 +7,4 @@ const ContainerDiveder = () => {
   );
 };
 
-export default ContainerDiveder;
+export default ContainerDivider;

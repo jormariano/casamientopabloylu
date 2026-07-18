@@ -48,12 +48,21 @@ const RSVP = () => {
           <div
             className={clsx(
               'transition-opacity duration-500',
-              invitationType ? 'opacity-100' : 'opacity-0 hidden',
+              invitationConfirmation ? 'opacity-100' : 'opacity-0 hidden',
             )}
           >
             {invitationConfirmation === 'no' && (
               <>
-                <h3 className={classText}>Lamentamos que te lo pierdas!</h3>
+                <h3
+                  className={clsx(
+                    classText,
+                    'text-center',
+                    'mt-10',
+                    'font-bold',
+                  )}
+                >
+                  Lamentamos que te lo pierdas!
+                </h3>
               </>
             )}
             {invitationConfirmation === 'si' && (
