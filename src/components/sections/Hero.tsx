@@ -13,20 +13,12 @@ const Hero = () => {
         <SectionTitle className="text-ink mb-2">Lucas y Pablo</SectionTitle>
 
         <Image
-          src="/ilustracion.jpeg"
+          src="/lucasypablo.jpeg"
           width={300}
           height={260}
           loading="eager"
           alt="Lucas y Pablo"
           className="w-full h-auto object-cover"
-          /* 
-          style={{
-            maskImage:
-              'radial-gradient(ellipse at center, black 55%, transparent 90%)',
-            WebkitMaskImage:
-              'radial-gradient(ellipse at center, black 55%, transparent 90%)',
-          }}
-              */
         />
       </Section>
     </Container>
