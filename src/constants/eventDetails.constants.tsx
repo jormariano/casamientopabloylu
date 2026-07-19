@@ -3,6 +3,7 @@ import { FaRegCalendar } from 'react-icons/fa';
 import { MdAccessTime } from 'react-icons/md';
 import { BsHouseDoor } from 'react-icons/bs';
 import { FiMapPin } from 'react-icons/fi';
+import { IoPersonOutline } from 'react-icons/io5';
 
 export type EventCards = {
   id: number;
@@ -35,5 +36,11 @@ export const cards: EventCards[] = [
     label: 'Dirección',
     description: '161 y 40 Lisandro Olmos',
     icon: FiMapPin,
+  },
+  {
+    id: 5,
+    label: 'Código de vestimenta',
+    description: 'Casual chic',
+    icon: IoPersonOutline,
   },
 ];

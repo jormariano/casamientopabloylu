@@ -31,7 +31,7 @@ const RSVP = () => {
       <Section className="bg-olive">
         <SectionTitle>Confirmá tu asistencia</SectionTitle>
         <h3 className="text-1xl text-cream text-center">
-          (antes del 15 de octubre de 2026)
+          (antes del 1 de noviembre de 2026)
         </h3>
         <form className="bg-cream rounded-xl p-6 flex flex-col shadow-lg">
           <RadioButton
@@ -98,8 +98,17 @@ const RSVP = () => {
                         maxLength={80}
                         className={classText}
                       ></Input>
+                      <Input
+                        label="Correo electrónico:"
+                        name="mail"
+                        placeholder="Correo electrónico"
+                        type="mail"
+                        required
+                        maxLength={80}
+                        className={classText}
+                      ></Input>
                       <RadioButton
-                        label="Restricción alimentaria:"
+                        label="Preferencia alimentaria:"
                         name="foodRestriction"
                         options={foodRestrictions}
                         className={classText}
@@ -120,7 +129,7 @@ const RSVP = () => {
                           />
 
                           <RadioButton
-                            label="Restricción alimentaria"
+                            label="Preferencia alimentaria"
                             name={`foodRestriction${member}`}
                             options={foodRestrictions}
                             className={classText}

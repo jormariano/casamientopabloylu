@@ -9,12 +9,19 @@ const EventDetails = () => {
     <Container>
       <Section className="text-ink font-bold text-center pt-2">
         <SectionTitle>La info</SectionTitle>
-        <div className="grid grid-cols-1 p-1 md:grid-cols-2">
-          {cards.map((card) => {
+        <div className="grid grid-cols-1 gap-4 p-1 md:grid-cols-2 justify-items-center">
+          {cards.map((card, index) => {
+            const isLast = index === cards.length - 1;
+
             return (
-              <InfoCard key={card.id} icon={card.icon} title={card.label}>
-                {card.description}
-              </InfoCard>
+              <div
+                key={card.id}
+                className={`${isLast ? 'md:col-span-2 justify-self-center w-full md:w-1/2' : 'w-full'}`}
+              >
+                <InfoCard icon={card.icon} title={card.label}>
+                  {card.description}
+                </InfoCard>
+              </div>
             );
           })}
         </div>
