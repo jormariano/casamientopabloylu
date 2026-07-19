@@ -5,13 +5,13 @@ import SectionTitle from '../ui/SectionTitle';
 
 const Hero = () => {
   return (
-    <Container className="bg-olive bg-grain h-[50vh]">
+    <Container className="bg-cream bg-grain">
       <Section>
-        <h1 className="max-w-xs text-3xl md:text-4xl font-semibold leading-10 tracking-tight ">
+        <h1 className="text-ink max-w-xs text-3xl md:text-4xl font-semibold leading-10 tracking-tight ">
           NOS CASAMOS
         </h1>
-        <SectionTitle className="text-cream">Lucas y Pablo</SectionTitle>
-{/* 
+        <SectionTitle className="text-ink mb-2">Lucas y Pablo</SectionTitle>
+
         <Image
           src="/ilustracion.jpeg"
           width={300}
@@ -19,15 +19,15 @@ const Hero = () => {
           loading="eager"
           alt="Lucas y Pablo"
           className="w-full h-auto object-cover"
+          /* 
           style={{
             maskImage:
               'radial-gradient(ellipse at center, black 55%, transparent 90%)',
             WebkitMaskImage:
               'radial-gradient(ellipse at center, black 55%, transparent 90%)',
           }}
+              */
         />
-        */}
-        
       </Section>
     </Container>
   );

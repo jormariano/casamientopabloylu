@@ -6,7 +6,7 @@ const Section = ({ children, className }: ContainerProps) => {
     <section
       className={clsx(
         'text-cream',
-        'p-10',
+        'p-6',
         'flex',
         'flex-1',
         'flex-col',

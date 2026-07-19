@@ -157,6 +157,26 @@ const RSVP = () => {
               </>
             )}
           </div>
+          <LineBorder />
+          <Button
+            label="Enviar"
+            className={clsx(
+              'w-3xs',
+              'flex',
+              'items-center',
+              'justify-center',
+              'rounded-sm',
+              'border',
+              'border-rust',
+              'px-6',
+              'py-3',
+              'transition-all',
+              'duration-200',
+              'bg-rust',
+              'text-1xl',
+              'text-cream',
+            )}
+          />
         </form>
       </Section>
     </Container>

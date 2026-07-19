@@ -7,7 +7,7 @@ import { cards } from '@/src/constants/eventDetails.constants';
 const EventDetails = () => {
   return (
     <Container>
-      <Section className="text-ink font-bold text-center">
+      <Section className="text-ink font-bold text-center pt-2">
         <SectionTitle>La info</SectionTitle>
         <div className="grid grid-cols-1 p-1 md:grid-cols-2">
           {cards.map((card) => {
