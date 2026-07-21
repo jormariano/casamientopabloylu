@@ -1,10 +1,6 @@
-import { ReactNode } from 'react';
-import { HTMLInputTypeAttribute } from 'react';
+import { InputHTMLAttributes } from 'react';
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  // name: string;
-  // placeholder?: string;
-  // type?: HTMLInputTypeAttribute;
-  className?: string;
+  error?: string;
 }

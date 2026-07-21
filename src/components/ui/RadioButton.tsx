@@ -6,9 +6,9 @@ const RadioButton = ({
   name,
   options,
   className,
-  onValueChange,
   layout,
   variant,
+  onValueChange,
   ...props
 }: RadioGroupProps) => {
   return (

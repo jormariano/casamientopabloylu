@@ -1,8 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 import { SelectOption } from './select.types';
 
-export interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
-  onClick?: () => void;
-  className?: string;
+  type?: 'button' | 'submit';
 }
