@@ -57,7 +57,7 @@ const RSVP = () => {
 
   return (
     <Container>
-      <Section className="bg-olive">
+      <Section className="bg-olive gap-4">
         <SectionTitle>Confirmá tu asistencia</SectionTitle>
         <h3 className="text-1xl text-cream text-center">
           (antes del 1 de noviembre de 2026)

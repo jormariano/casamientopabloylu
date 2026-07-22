@@ -11,8 +11,8 @@ export default function Home() {
       <Hero />
       <EventDetails />
       <Gift />
-      <RSVP />
       <Map />
+      <RSVP />
       <Footer />
     </main>
   );
