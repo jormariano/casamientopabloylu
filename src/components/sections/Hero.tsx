@@ -18,7 +18,7 @@ const Hero = () => {
           height={260}
           loading="eager"
           alt="Lucas y Pablo"
-          className="w-full h-auto object-cover"
+          className="w-4/5 md:w-3/5 lg:w-2/5 h-auto"
         />
       </Section>
     </Container>

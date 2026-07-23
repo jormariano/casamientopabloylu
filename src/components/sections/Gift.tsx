@@ -6,7 +6,7 @@ import { CopyButton } from './CopyButton';
 
 const Gift = () => {
   const classSpan = 'font-bold';
-  const classDiv = 'bg-cream text-ink p-4 rounded-md';
+  const classDiv = 'bg-cream text-ink p-4 rounded-md md:py-6 md:px-4';
   return (
     <Container>
       <Section className="text-cream text-center p-6 bg-olive">
@@ -14,7 +14,7 @@ const Gift = () => {
         <SectionTitle className="py-3 px-6">
           ¿Nos querés hacer un regalo?
         </SectionTitle>
-        <div className="grid gap-2">
+        <div className="grid gap-2 md:grid-cols-2 md:gap-6">
           <div className={classDiv}>
             <p>CBU:</p>
             <div className="flex flex-row flex-end">

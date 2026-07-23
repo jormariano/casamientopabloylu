@@ -22,18 +22,65 @@ export async function POST(req: Request) {
       attendance,
       invitationType,
       fullName,
+      mail,
       foodRestriction,
       member1,
+      mail1,
       foodRestriction1,
+      otraRestriccion1,
       member2,
+      mail2,
       foodRestriction2,
+      otraRestriccion2,
       member3,
+      mail3,
       foodRestriction3,
-      mail,
+      otraRestriccion3,
+      member4,
+      mail4,
+      foodRestriction4,
+      otraRestriccion4,
+      member5,
+      mail5,
+      foodRestriction5,
+      otraRestriccion5,
+      otraRestriccion,
       message,
     } = body;
 
+    const finalFoodRestriction =
+      foodRestriction === 'otra' ? otraRestriccion : foodRestriction;
+
+    const finalFoodRestriction1 =
+      foodRestriction1 === 'otra' ? otraRestriccion1 : foodRestriction1;
+
+    const finalFoodRestriction2 =
+      foodRestriction2 === 'otra' ? otraRestriccion2 : foodRestriction2;
+
+    const finalFoodRestriction3 =
+      foodRestriction3 === 'otra' ? otraRestriccion3 : foodRestriction3;
+
+    const finalFoodRestriction4 =
+      foodRestriction4 === 'otra' ? otraRestriccion4 : foodRestriction4;
+
+    const finalFoodRestriction5 =
+      foodRestriction5 === 'otra' ? otraRestriccion5 : foodRestriction5;
+
     const rows = [];
+
+    // Invitación rechazada
+    if (attendance === 'no') {
+      rows.push([
+        new Date().toISOString(),
+        attendance,
+        invitationType,
+        fullName,
+        mail,
+        finalFoodRestriction,
+        message,
+        new Date().toLocaleString('es-AR'),
+      ]);
+    }
 
     // Invitación individual
     if (invitationType === 'individual') {
@@ -42,8 +89,8 @@ export async function POST(req: Request) {
         attendance,
         invitationType,
         fullName,
-        foodRestriction,
         mail,
+        finalFoodRestriction,
         message,
         new Date().toLocaleString('es-AR'),
       ]);
@@ -57,8 +104,8 @@ export async function POST(req: Request) {
           attendance,
           invitationType,
           member1,
-          foodRestriction1,
-          mail,
+          mail1,
+          finalFoodRestriction1,
           message,
           new Date().toLocaleString('es-AR'),
         ]);
@@ -70,8 +117,8 @@ export async function POST(req: Request) {
           attendance,
           invitationType,
           member2,
-          foodRestriction2,
-          mail,
+          mail2,
+          finalFoodRestriction2,
           message,
           new Date().toLocaleString('es-AR'),
         ]);
@@ -83,8 +130,32 @@ export async function POST(req: Request) {
           attendance,
           invitationType,
           member3,
-          foodRestriction3,
-          mail,
+          mail3,
+          finalFoodRestriction3,
+          message,
+          new Date().toLocaleString('es-AR'),
+        ]);
+      }
+      if (member4) {
+        rows.push([
+          new Date().toISOString(),
+          attendance,
+          invitationType,
+          member4,
+          mail4,
+          finalFoodRestriction4,
+          message,
+          new Date().toLocaleString('es-AR'),
+        ]);
+      }
+      if (member5) {
+        rows.push([
+          new Date().toISOString(),
+          attendance,
+          invitationType,
+          member5,
+          mail5,
+          finalFoodRestriction5,
           message,
           new Date().toLocaleString('es-AR'),
         ]);
